@@ -119,15 +119,39 @@ radial-gradient(circle at 70% 55%,rgba(11,19,43,.9),transparent 42%);
 
 .stars{
 position:absolute;
-inset:0;
-opacity:.5;
+inset:-50%;
+width:200%;
+height:200%;
+opacity:.55;
 background-image:
 radial-gradient(circle,#fff 1px,transparent 1.5px),
-radial-gradient(circle,#fff .7px,transparent 1px);
-background-size:120px 120px,73px 73px;
-background-position:0 0,30px 50px;
+radial-gradient(circle,rgba(255,255,255,.65) .7px,transparent 1px),
+radial-gradient(circle,rgba(130,165,255,.45) 1px,transparent 1.5px);
+background-size:
+120px 120px,
+73px 73px,
+190px 190px;
+background-position:
+0 0,
+30px 50px,
+70px 20px;
+animation:spaceDrift 35s linear infinite;
 }
 
+@keyframes spaceDrift{
+0%{
+background-position:
+0 0,
+30px 50px,
+70px 20px;
+}
+100%{
+background-position:
+120px 120px,
+176px 196px,
+260px 210px;
+}
+}
 .moon{
 position:absolute;
 width:720px;
@@ -141,6 +165,16 @@ box-shadow:
 inset -90px -70px 150px #000,
 0 0 150px rgba(64,102,220,.16);
 opacity:.92;
+animation:planetDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes planetDrift{
+0%{
+transform:translate3d(0,0,0) scale(1);
+}
+100%{
+transform:translate3d(-25px,18px,0) scale(1.035);
+}
 }
 
 .hero-content{
