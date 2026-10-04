@@ -1,100 +1,723 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Callisto | Creative Growth</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Callisto | Creative Growth Hub</title>
 
-    body {
-      background: #050509;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(110, 70, 255, .25), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(0, 180, 255, .16), transparent 30%);
-      z-index: -1;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    main {
-      width: min(1100px, 90%);
-    }
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      opacity: .65;
-      margin-bottom: 22px;
-    }
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-    h1 {
-      font-size: clamp(64px, 14vw, 160px);
-      line-height: .85;
-      letter-spacing: -6px;
-    }
+.container{
+  width:min(1180px,88%);
+  margin:auto;
+}
 
-    h2 {
-      font-size: clamp(26px, 5vw, 60px);
-      font-weight: 400;
-      margin-top: 25px;
-      max-width: 800px;
-    }
+/* NAV */
 
-    p {
-      margin-top: 30px;
-      max-width: 600px;
-      line-height: 1.7;
-      color: #b9b9c4;
-      font-size: 17px;
-    }
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
 
-    .orb {
-      position: fixed;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.18);
-      right: -120px;
-      top: -100px;
-      box-shadow:
-        0 0 80px rgba(104, 70, 255, .25),
-        inset 0 0 80px rgba(0, 180, 255, .12);
-      z-index: -1;
-    }
-  </style>
+.nav-inner{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-size:20px;
+  letter-spacing:8px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+.nav-button{
+  border:1px solid #fff;
+  padding:10px 18px;
+  border-radius:30px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:130px 0 80px;
+  background:
+  radial-gradient(circle at 75% 25%,rgba(37,99,235,.20),transparent 27%),
+  radial-gradient(circle at 25% 75%,rgba(11,19,43,.9),transparent 38%),
+  #000;
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  opacity:.4;
+  background-image:
+  radial-gradient(#fff 1px,transparent 1px),
+  radial-gradient(#fff 1px,transparent 1px);
+  background-size:80px 80px,130px 130px;
+  background-position:0 0,35px 45px;
+}
+
+.planet{
+  position:absolute;
+  width:580px;
+  height:580px;
+  border-radius:50%;
+  right:-180px;
+  top:40px;
+  background:
+  radial-gradient(circle at 30% 30%,#182442,#05070d 48%,#000 72%);
+  border:1px solid rgba(200,200,200,.18);
+  box-shadow:
+  0 0 100px rgba(37,99,235,.15),
+  inset -50px -40px 100px #000;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+}
+
+.kicker{
+  color:#c8c8c8;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:12px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:clamp(58px,10vw,125px);
+  line-height:.86;
+  letter-spacing:-5px;
+  text-transform:uppercase;
+}
+
+.hero h1 span{
+  display:block;
+  color:#c8c8c8;
+}
+
+.hero-copy{
+  margin-top:35px;
+  max-width:620px;
+  color:#b7b7bd;
+  font-size:18px;
+}
+
+.buttons{
+  display:flex;
+  gap:15px;
+  margin-top:38px;
+  flex-wrap:wrap;
+}
+
+.button{
+  padding:14px 24px;
+  border-radius:40px;
+  font-size:14px;
+  border:1px solid #fff;
+}
+
+.button.primary{
+  background:#fff;
+  color:#000;
+}
+
+/* GENERAL */
+
+section{
+  padding:110px 0;
+}
+
+.section-label{
+  color:#c8c8c8;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:11px;
+  margin-bottom:20px;
+}
+
+.section-title{
+  font-size:clamp(40px,6vw,76px);
+  line-height:.95;
+  letter-spacing:-3px;
+  max-width:900px;
+  text-transform:uppercase;
+}
+
+.intro{
+  color:#a9a9b2;
+  font-size:18px;
+  max-width:720px;
+  margin-top:30px;
+}
+
+/* DIFFERENCE */
+
+.difference{
+  background:#05070d;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:55px;
+}
+
+.card{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:32px 25px;
+  min-height:250px;
+  background:linear-gradient(145deg,#0b132b,#050505);
+}
+
+.number{
+  color:#c8c8c8;
+  font-size:12px;
+  margin-bottom:50px;
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#a8a8af;
+  font-size:14px;
+}
+
+/* SERVICES */
+
+.services-grid{
+  margin-top:55px;
+  border-top:1px solid #333;
+}
+
+.service{
+  display:grid;
+  grid-template-columns:70px 1fr 1fr;
+  padding:30px 0;
+  border-bottom:1px solid #252525;
+  align-items:center;
+}
+
+.service-number{
+  color:#777;
+}
+
+.service h3{
+  font-size:26px;
+}
+
+.service p{
+  color:#999;
+}
+
+/* PACKAGES */
+
+.packages{
+  background:#05070d;
+}
+
+.package-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:55px;
+}
+
+.package{
+  border:1px solid #292d38;
+  border-radius:22px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  min-height:500px;
+  background:#0b0d13;
+}
+
+.package.featured{
+  background:#0b132b;
+  transform:translateY(-10px);
+}
+
+.package h3{
+  font-size:28px;
+}
+
+.package-sub{
+  color:#888;
+  margin:5px 0 25px;
+}
+
+.package ul{
+  list-style:none;
+}
+
+.package li{
+  padding:10px 0;
+  color:#c8c8c8;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.package li:before{
+  content:"✓";
+  margin-right:10px;
+  color:#fff;
+}
+
+.price{
+  font-size:45px;
+  font-weight:700;
+  margin-top:auto;
+  padding-top:30px;
+}
+
+/* ABOUT */
+
+.about-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+
+.about-copy{
+  color:#aaa;
+  font-size:18px;
+}
+
+.about-copy p{
+  margin-bottom:20px;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  background:
+  radial-gradient(circle at center,rgba(37,99,235,.18),transparent 40%),
+  #000;
+}
+
+.cta h2{
+  font-size:clamp(55px,9vw,110px);
+  line-height:.9;
+  letter-spacing:-5px;
+  text-transform:uppercase;
+}
+
+.cta p{
+  color:#aaa;
+  margin:30px auto;
+  max-width:600px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid #222;
+  padding:40px 0;
+  color:#777;
+  font-size:13px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .brand{
+    font-size:16px;
+    letter-spacing:6px;
+  }
+
+  .hero{
+    min-height:92vh;
+  }
+
+  .planet{
+    width:430px;
+    height:430px;
+    right:-230px;
+    top:60px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  section{
+    padding:80px 0;
+  }
+
+  .grid,
+  .package-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service{
+    grid-template-columns:45px 1fr;
+  }
+
+  .service p{
+    grid-column:2;
+    margin-top:8px;
+  }
+
+  .about-layout{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .package.featured{
+    transform:none;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="orb"></div>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#">CALLISTO</a>
 
-  <main>
-    <div class="eyebrow">Creative Growth Studio</div>
+    <div class="nav-links">
+      <a href="#difference">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">About</a>
+      <a class="nav-button" href="mailto:callisto.orb@gmail.com">Let's Talk</a>
+    </div>
+  </div>
+</nav>
 
-    <h1>CALLISTO</h1>
+<header class="hero">
+  <div class="stars"></div>
+  <div class="planet"></div>
+
+  <div class="container hero-content">
+
+    <div class="kicker">
+      Creative Growth Hub
+    </div>
+
+    <h1>
+      Build Your Identity.
+      <span>Grow Stronger.</span>
+      Expand Endlessly.
+    </h1>
+
+    <p class="hero-copy">
+      Callisto connects identity, digital presence, content and growth
+      into one ecosystem built to move brands forward.
+    </p>
+
+    <div class="buttons">
+      <a class="button primary" href="#packages">Explore Callisto</a>
+      <a class="button" href="mailto:callisto.orb@gmail.com">Start a Conversation</a>
+    </div>
+
+  </div>
+</header>
+
+<section class="difference" id="difference">
+  <div class="container">
+
+    <div class="section-label">The Callisto Difference</div>
+
+    <h2 class="section-title">
+      One connected growth ecosystem.
+    </h2>
+
+    <p class="intro">
+      Strong brands aren't built through disconnected services.
+      Callisto brings strategy, identity, content and growth together
+      so every part of your presence moves in the same direction.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="number">01</div>
+        <h3>Strategy</h3>
+        <p>
+          Clear direction, positioning and practical plans designed
+          around where your brand is going.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="number">02</div>
+        <h3>Identity</h3>
+        <p>
+          A recognisable brand and digital presence built to communicate
+          who you are and why you matter.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="number">03</div>
+        <h3>Content</h3>
+        <p>
+          Content systems that create consistency, attention and
+          stronger relationships with your audience.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="number">04</div>
+        <h3>Growth</h3>
+        <p>
+          Execution focused on visibility, community, opportunities
+          and sustainable expansion.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+
+    <div class="section-label">What We Do</div>
+
+    <h2 class="section-title">
+      Build the presence. Create the momentum.
+    </h2>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="service-number">01</div>
+        <h3>Brand Identity</h3>
+        <p>Brand direction, identity systems and brand development.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">02</div>
+        <h3>Websites</h3>
+        <p>Digital experiences designed around your identity and goals.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">03</div>
+        <h3>Content Strategy</h3>
+        <p>Content planning and systems built for consistency and reach.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">04</div>
+        <h3>Social Media</h3>
+        <p>Management, organic growth and community development.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">05</div>
+        <h3>Growth Strategy</h3>
+        <p>Practical growth direction connecting brand, audience and execution.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-number">06</div>
+        <h3>Marketing Support</h3>
+        <p>Flexible strategic and execution support as your business evolves.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="container">
+
+    <div class="section-label">Elevate Your Brand</div>
+
+    <h2 class="section-title">
+      Choose your orbit.
+    </h2>
+
+    <div class="package-grid">
+
+      <div class="package">
+        <h3>Orbit Launch</h3>
+        <div class="package-sub">Get clear. Get moving.</div>
+
+        <ul>
+          <li>Brand & Presence Review</li>
+          <li>Growth Strategy Session</li>
+          <li>30-Day Action Plan</li>
+        </ul>
+
+        <div class="price">$499</div>
+      </div>
+
+      <div class="package featured">
+        <h3>Orbit Growth</h3>
+        <div class="package-sub">Build consistent momentum.</div>
+
+        <ul>
+          <li>Monthly Strategy & Support</li>
+          <li>Content Planning</li>
+          <li>Community & Growth Guidance</li>
+          <li>Ongoing Brand Development</li>
+        </ul>
+
+        <div class="price">$999</div>
+      </div>
+
+      <div class="package">
+        <h3>Orbit Expansion</h3>
+        <div class="package-sub">Your complete growth partnership.</div>
+
+        <ul>
+          <li>Complete Growth Partnership</li>
+          <li>Branding & Website Support</li>
+          <li>Content & Presence Management</li>
+          <li>Priority Strategy & Consultation</li>
+        </ul>
+
+        <div class="price">$2,499</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-layout">
+
+    <div>
+      <div class="section-label">About Callisto</div>
+
+      <h2 class="section-title">
+        Beyond the ordinary.
+      </h2>
+    </div>
+
+    <div class="about-copy">
+
+      <p>
+        Callisto is a creative growth hub built around one simple idea:
+        businesses grow stronger when identity, presence, strategy and
+        execution work together.
+      </p>
+
+      <p>
+        Inspired by transformation, resilience and expansion, Callisto
+        works with emerging brands, established businesses and
+        professionals ready to build something with greater reach,
+        meaning and influence.
+      </p>
+
+      <p>
+        No disconnected pieces. No generic formula. One ecosystem
+        designed around the direction of your brand.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+
+    <div class="section-label">Ready?</div>
 
     <h2>
-      Ideas with gravity.
-      Growth with direction.
+      Let's Build<br>Your Orbit.
     </h2>
 
     <p>
-      Brand. Digital. Content.
+      Whether you're building from the ground up or ready for your next
+      stage of growth, start the conversation with Callisto.
+    </p>
+
+    <div class="buttons" style="justify-content:center">
+      <a class="button primary" href="mailto:callisto.orb@gmail.com">
+        Start a Conversation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>CALLISTO</div>
+
+    <div>
+      Creative Growth Hub · Perth, Western Australia
+    </div>
+
+    <div>
+      © 2026 Callisto
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
